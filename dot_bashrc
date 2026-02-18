@@ -157,4 +157,7 @@ if [[ "$TERM" == "xterm" ]]; then
 fi
 
 # custom addition
+
 set -o vi
+
+eval "$(mise activate bash)"
