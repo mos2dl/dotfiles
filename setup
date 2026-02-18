@@ -1,8 +1,14 @@
 #!/bin/bash
 
-echo "Hello world" > /tmp/hello
+set -euo pipefail
 
-echo "set -o vi" >> ~/.bashrc
+if ! command -v chezmoi >/dev/null; then
+    sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply git@github.com:mos2dl/dotfiles.git
+fi
 
-echo "alias c=clear >> ~/.bashrc
+if ! command -v vim >/dev/null; then
+    sudo apt update && sudo apt install vim
+fi
+
+exit 0
 
