@@ -4,3 +4,5 @@ echo "Hello world" > /tmp/hello
 
 echo "set -o vi" >> ~/.bashrc
 
+echo "alias c=clear >> ~/.bashrc
+
