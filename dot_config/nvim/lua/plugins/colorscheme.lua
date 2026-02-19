@@ -20,13 +20,25 @@
 -- 	},
 -- }
 
+-- return {
+-- 	{ "neanias/everforest-nvim" },
+-- 	{
+-- 		"LazyVim/LazyVim",
+-- 		opts = {
+-- 			colorscheme = "everforest",
+-- 			background = "soft",
+-- 		},
+-- 	},
+-- }
+--
+
 return {
-	{ "neanias/everforest-nvim" },
+
+	{ "wittyjudge/gruvbox-material.nvim" },
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "everforest",
-			background = "soft",
+			colorscheme = "gruvbox-material",
 		},
 	},
 }
