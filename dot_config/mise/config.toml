@@ -1,0 +1,4 @@
+[tool]
+bat = "latest"
+chezmoi = "latest"
+
