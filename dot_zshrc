@@ -5,12 +5,12 @@ HISTFILE="$HOME/.zsh_history"
 HISTSIZE=100000
 SAVEHIST=100000
 
-# setopt appendhistory
-# setopt sharehistory
-# setopt hist_ignore_space
-# setopt hist_ignore_all_dups
-# setopt hist_save_no_dups
-# setopt hist_find_no_dups
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_find_no_dups
 
 
 # ~~~~~~~~~~~~~~~ Cleaning ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -63,21 +63,21 @@ fi
 
 # ~~~~~~~~~~~~~~~ Plugins ~~~~~~~~~~~~~~~~~~~~~~~~
 
-# ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-#
-# # Download Zinit if it doesn't exist
-# if [ ! -d "$ZINIT_HOME" ]; then
-#   mkdir -p "$(dirname $ZINIT_HOME)"
-#   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-# fi
-#
-# stty start undef
-# stty stop undef
-# setopt noflowcontrol
-#
-# source "${ZINIT_HOME}/zinit.zsh"
-#
-# zinit snippet OMZP::vi-mode
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+
+# Download Zinit if it doesn't exist
+if [ ! -d "$ZINIT_HOME" ]; then
+  mkdir -p "$(dirname $ZINIT_HOME)"
+  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+
+stty start undef
+stty stop undef
+setopt noflowcontrol
+
+source "${ZINIT_HOME}/zinit.zsh"
+
+zinit snippet OMZP::vi-mode
 
 
 # ~~~~~~~~~~~~~~~ Completion ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -116,6 +116,8 @@ alias lg=lazygit
 
 alias c=clear
 alias k=kubectl
+
+alias mr='mise registry'
 
 if command -v bat > /dev/null ; then
   alias cat="bat"
