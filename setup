@@ -14,14 +14,12 @@ if [ ! -d "$HOME/.zsh/pure" ]; then
   git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
 fi
 
-
 if ! command -v chezmoi >/dev/null; then
-    sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply git@github.com:mos2dl/dotfiles.git
+  sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply git@github.com:mos2dl/dotfiles.git
 fi
 
-if ! command -v vim >/dev/null; then
-    sudo apt update && sudo apt install vim -y
-fi
+# if ! command -v vim >/dev/null; then
+#     sudo apt update && sudo apt install vim -y
+# fi
 
 exit 0
-
