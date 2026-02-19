@@ -7,4 +7,5 @@ ripgrep = "latest"
 neovim = "latest"
 node = "latest"
 tmux = "latest"
+lazygit = "latest"
 
