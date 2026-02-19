@@ -62,6 +62,25 @@ if command -v mise > /dev/null ; then
 fi
 
 
+# ~~~~~~~~~~~~~~~ Plugins ~~~~~~~~~~~~~~~~~~~~~~~~
+
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+
+# Download Zinit if it doesn't exist
+if [ ! -d "$ZINIT_HOME" ]; then
+  mkdir -p "$(dirname $ZINIT_HOME)"
+  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+
+stty start undef
+stty stop undef
+setopt noflowcontrol
+
+source "${ZINIT_HOME}/zinit.zsh"
+
+zinit snippet OMZP::vi-mode
+
+
 # ~~~~~~~~~~~~~~~ Completion ~~~~~~~~~~~~~~~~~~~~~~~~
 
 
